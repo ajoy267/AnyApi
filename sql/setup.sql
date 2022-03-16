@@ -5,5 +5,5 @@ DROP TABLE IF EXISTS cats;
 CREATE TABLE cats (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     name TEXT NOT NULL,
-    favoriteToy TEXT NOT NULL
+    favorite_toy TEXT NOT NULL
 )
