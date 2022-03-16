@@ -33,4 +33,16 @@ describe('anyapi routes', () => {
     const res = await request(app).get(`/api/v1/cats/${expected.id}`);
     expect(res.body).toEqual({ ...expected });
   });
+
+  it('updates my cat by its id', async () => {
+    const expected = {
+      id: expect.any(String),
+      name: 'Hara',
+      favoriteToy: 'Laser',
+    };
+    const res = await request(app)
+      .patch('/api/v1/cats/1')
+      .send({ favoriteToy: 'Laser' });
+    expect(res.body).toEqual(expected);
+  });
 });
